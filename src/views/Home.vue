@@ -40,7 +40,7 @@
           text="Xuất file dữ liệu"
           type="normal"
           styling-mode="outlined"
-          @click="openFormData"
+          @click="exportFile"
         />
       </div>
     </div>
@@ -107,9 +107,9 @@ export default {
     // thêm category
     addNewCategory(categgory = null) {
       this.isShowForm = false;
-      this.dataForm.trealet.listTrealet.push(categgory);
-
       if (categgory === null) return;
+
+      if (!this.dataForm) this.dataForm.trealet.listTrealet.push(categgory);
     },
 
     // xử lý đọc file
@@ -124,12 +124,30 @@ export default {
             if (!temp && !temp.trealet)
               this.dataForm = JSON.parse(e.target.result);
           } catch (error) {
+            this.dataForm = _.cloneDeep(this.modelForm);
             console.log(error);
           }
         };
 
         fr.readAsText(file);
       }
+    },
+
+    // xuất file
+    exportFile() {
+      let data = null;
+      if (!this.dataForm) {
+        data = JSON.stringify(this.modelForm);
+      } else {
+        data = JSON.stringify(this.dataForm);
+      }
+      const blob = new Blob([data], { type: "application/json" });
+
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "dataSrc.trealet";
+      link.click();
+      URL.revokeObjectURL(link.href);
     },
   },
 };

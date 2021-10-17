@@ -81,6 +81,17 @@ export default {
     },
   },
 
+  watch: {
+    isShowed(newVal) {
+      if (newVal) {
+        this.title = "";
+        this.description = "";
+        this.avatar = "";
+        this.images = "";
+      }
+    },
+  },
+
   emits: ["close", "save"],
 
   data() {
@@ -89,7 +100,6 @@ export default {
       description: "",
       avatar: "",
       images: "",
-      data: null,
     };
   },
 
@@ -104,8 +114,8 @@ export default {
     save() {
       let category = { title: "", description: "", items: [] };
 
-      category.title = this.cleanStr(this.title);
-      category.description = this.cleanStr(this.description);
+      category.title = this.title.trim();
+      category.description = this.description.trim();
       category.avatar = this.cleanStr(this.avatar);
 
       category.items = this.cleanStr(this.images)
@@ -113,10 +123,7 @@ export default {
         .split(",")
         .filter((item) => (item ? item : null));
 
-      this.$emit(
-        "save",
-        JSON.stringify({ trealet: { exec: "slideshow", ...category } })
-      );
+      this.$emit("save", { trealet: { exec: "slideshow", ...category } });
     },
   },
 };
