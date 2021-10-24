@@ -1,11 +1,116 @@
+@import "colors.css";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  color: var(--color-primary);
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   height: 100%;
+  font-size: 2rem;
+  overflow-x: hidden;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
+h1 {
   margin: 0;
+  padding: 0;
+  font-size: 5.6rem;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  position: relative;
+  left: 8px;
+  top: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 1.6rem 3.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 8px;
+  left: -8px;
+  border: 1px solid var(--color-primary);
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+
+button:hover {
+  left: 4px;
+  top: 12px;
+}
+
+button:hover::after {
+  top: 6px;
+  left: -6px;
+}
+
+.size--default {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.background--center {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layout-center--stretch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layout-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.padding--default {
+  padding-left: 9.6rem;
+  padding-right: 9.6rem;
+}
+
+.background-outline {
+  position: relative;
+  left: 8px;
+  top: 8px;
+}
+
+.background-outline::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 8px;
+  left: -8px;
+  border: 1px solid var(--color-primary);
+  z-index: -1;
 }

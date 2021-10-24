@@ -4,14 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Philosopher&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/home.css" />
     <title>Home</title>
   </head>
   <body>
     <div class="home">
-      <div class="navbar"></div>
-      <div class="hero"></div>
+      <!-- Thanh navbar -->
+      <div class="navbar layout-center--stretch padding--default">
+        <div class="navbar__logo">LOGO</div>
+        <div class="navbar__cta">
+          <div class="navbar__link">Trò chơi</div>
+          <div class="navbar__link">Trưng bày</div>
+          <div class="navbar__link">Sưu tập</div>
+          <div class="navbar__search-box">
+            <input type="text" placeholder="Tìm kiếm tác phẩm bạn yêu thích">
+            <div class="navbar__search-icon size--default background--center"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero section -->
+      <div class="hero">
+        <div class="hero--left">
+          <h1>Khám phá Việt Nam qua những bức tranh</h1>
+
+          <div style="height: 9.6rem"></div>
+
+          <button>Tham quan ngay</button>
+        </div>
+        <div class="hero--right">
+          <img class="background-outline" src="assets/images/hero-image-1.jpg" alt="hero-image">
+        </div>
+      </div>
+
+
       <div class="category"></div>
     </div>
   </body>
