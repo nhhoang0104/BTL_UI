@@ -32,6 +32,13 @@ h1 {
   font-weight: normal;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 3rem;
+  font-weight: normal;
+}
+
 button {
   border: none;
   position: relative;
@@ -57,6 +64,15 @@ button::after {
   border: 1px solid var(--color-primary);
   transition: all 0.2s ease-in-out;
   z-index: -1;
+}
+
+.button--secondary {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.button--secondary::after {
+  border: 1px solid var(--color-white);
 }
 
 button:hover {
@@ -99,8 +115,6 @@ button:hover::after {
 
 .background-outline {
   position: relative;
-  left: 8px;
-  top: 8px;
 }
 
 .background-outline::after {

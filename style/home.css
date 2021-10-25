@@ -1,14 +1,18 @@
 .home {
   height: 100%;
   width: 100vw;
-  overflow: hidden;
 }
 
+/** Thanh navbar **/
 .home .navbar {
   height: 4.8rem;
   width: 100%;
   background-color: var(--color-primary);
   color: var(--color-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 .home .navbar .navbar__logo {
@@ -56,6 +60,7 @@
   background-image: url('../assets/icons/icon-search-grey.svg');
 }
 
+/** Hero section của home **/
 .home .hero {
   width: 100vw;
   display: flex;
@@ -64,12 +69,13 @@
 }
 
 .home .hero .hero--left {
-  width: 30%;
+  width: 40%;
   margin-top: 14.8rem;
 }
 
 .home .hero .hero--right {
-  width: 50%;
+  width: 60%;
+  margin-right: -9.6rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -79,9 +85,62 @@
   width: 100%;
 }
 
-.home .category {
-  margin-top: 100px;
+.home .hero .hero--right .hero__image-title {
   width: 100%;
+  font-style: italic;
+  text-align: left;
+}
+
+/** Danh sách dòng tranh **/
+.home .category {
+  width: auto;
+  height: auto;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  transform: skewY(5deg);
+}
+
+.home .category .category__container {
   height: 100%;
-  background-color: #2a2a2a;
+  padding: 12.8rem 0;
+  transform: skewY(-5deg);
+}
+
+.home .category .category__container .category__title {
+  font-weight: normal;
+  margin-bottom: 4.8rem;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home .category .category__container .category__carousel {
+  display: inline-flex;
+  gap: 12.8rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.home .category .category__container .category__carousel .category__item {
+  width: 66vw;
+  display: flex;
+  gap: 6.4rem;
+  align-items: center;
+}
+
+.category__item-thumbnail-name {
+  font-size: 1.6rem;
+  font-style: italic;
+  margin-top: 1.6rem;
+}
+
+.home .category .category__container .category__carousel-button {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6.4rem;
+}
+
+.home .category .category__container .category__carousel-button .previous {
+  transform: rotate(180deg)
 }
