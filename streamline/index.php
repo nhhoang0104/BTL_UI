@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+	require_once('../lib/functions.php');
+
+	$d = initializeApp('streamline');	
+	$ni = sizeof($d['items']);
+	$iu = array($ni);	
+?>
+
+<!DOCTYPE HTML>
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,7 +40,22 @@
         <div class="heading">Các dòng tranh tiêu biểu</div>
         <div class="carousel">
           <div class="list" id="carousel">
-            <div class="item active" idx="0">
+          <?php
+            for($i=0;$i<$ni;$i++){
+              $avatar = $d['items'][$i]['avatar'];
+              $title = $d['items'][$i]['title'];
+              $decs = $d['items'][$i]['description'];
+              $link 	= "url('".(fetchItemData($avatar))."')";
+              $active = "";
+
+              if ($i == 0) {
+                $active ="active";
+              }
+
+              echo '<div class="item '.($active).'" idx="0"><div class="item-txt"><div class="title">'.($title).'</div><div class="description">'.($decs).'</div><div class="more">Xem thêm</div></div><div class="item-img"><div style="background-image:'.($link)'" class="img"></div></div></div>'      
+            }
+          ?>
+            <!--div class="item active" idx="0">
               <div class="item-txt">
                 <div class="title">Tranh Đông Hồ</div>
                 <div class="description">
@@ -46,22 +69,7 @@
                   class="img"
                 ></div>
               </div>
-            </div>
-            <div class="item" idx="1">
-              <div class="item-txt">
-                <div class="title">Tranh Đông Hồ 1</div>
-                <div class="description">
-                  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-                </div>
-                <div class="more">Xem thêm</div>
-              </div>
-              <div class="item-img">
-                <div
-                  style="background-image: url('../assets/img2.png')"
-                  class="img"
-                ></div>
-              </div>
-            </div>
+            </div-->
           </div>
           <div class="utils-btn">
             <div class="btn-1 prev" id="prev"></div>

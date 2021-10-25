@@ -1,8 +1,7 @@
-let lenList = 2;
-let pos = 0;
-
 $(document).ready(function () {
   let list = $("#carousel").children();
+  let lenList = list.length;
+  let pos = 0;
 
   $("#prev").click(() => {
     let curPos = pos;
