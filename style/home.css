@@ -3,63 +3,6 @@
   width: 100vw;
 }
 
-/** Thanh navbar **/
-.home .navbar {
-  height: 4.8rem;
-  width: 100%;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 5;
-}
-
-.home .navbar .navbar__logo {
-  font-family: 'Philosopher', sans-serif;
-  font-size: 3rem;
-}
-
-.home .navbar .navbar__cta {
-  display: flex;
-  align-items: center;
-  gap: 3.2rem;
-}
-
-.home .navbar .navbar__cta .navbar__link {
-  cursor: pointer;
-}
-
-.home .navbar .navbar__cta .navbar__search-box {
-  width: 37.7rem;
-  height: 2.5rem;
-  border-bottom: 1px solid var(--color-white-blur);
-  padding-bottom: 7px;
-  display: flex;
-  gap: 8px;
-}
-
-.home .navbar .navbar__cta .navbar__search-box input {
-  border: none;
-  width: 100%;
-  height: 100%;
-  font-size: 1.6rem;
-  font-family: 'Montserrat', sans-serif;
-  background-color: transparent;
-  color: var(--color-white);
-}
-
-.home .navbar .navbar__cta .navbar__search-box input::placeholder {
-  font-size: 1.4rem;
-  font-style: italic;
-  text-align: right;
-  color: var(--color-white-blur);
-}
-
-.home .navbar .navbar__cta .navbar__search-box .navbar__search-icon {
-  background-image: url('../assets/icons/icon-search-grey.svg');
-}
-
 /** Hero section của home **/
 .home .hero {
   width: 100vw;
@@ -142,5 +85,31 @@
 }
 
 .home .category .category__container .category__carousel-button .previous {
-  transform: rotate(180deg)
+  transform: rotate(180deg);
+}
+
+/** Danh sách tranh dạng lưới **/
+.home .collection h1 {
+  margin-bottom: 6.4rem;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home .collection .collection__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card_width));
+  grid-auto-rows: var(--row_increment);
+  justify-content: center;
+}
+
+.home .collection .collection__item .collection__item-title {
+  margin: 1.6rem 0 8px;
+  font-weight: 600;
+}
+
+.home .collection .collection__item .collection__item-category {
+  font-style: italic;
+  font-size: 1.6rem;
 }

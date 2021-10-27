@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Philosopher&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@6.0.2/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/category.css" />
+    <title>Category</title>
+  </head>
+  <body>
+    <!-- Thanh navbar -->
+    <div class="navbar layout-center--stretch padding--default">
+      <div class="navbar__logo">LOGO</div>
+      <div class="navbar__cta">
+        <div class="navbar__link">Trò chơi</div>
+        <div class="navbar__link">Trưng bày</div>
+        <div class="navbar__link">Sưu tập</div>
+        <div class="navbar__search-box">
+          <input type="text" placeholder="Tìm kiếm tác phẩm bạn yêu thích" />
+          <div
+            class="navbar__search-icon size--default background--center"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero section -->
+    <!-- Lưu ý: background của hero sẽ là thumbnail của category tương ứng -->
+    <div
+      class="hero background--center"
+      style="background-image: url('assets/images/category-image-1.jpg')"
+    >
+      <div class="hero__wrapper padding--default">
+        <h1 class="hero__title">Tranh Đông Hồ</h1>
+        <div class="hero__description">
+          Tranh Đông Hồ, hay tên đầy đủ là tranh khắc gỗ dân gian Đông Hồ, là
+          một dòng tranh dân gian Việt Nam với xuất xứ từ làng Đông Hồ (xã Song
+          Hồ, huyện Thuận Thành, tỉnh Bắc Ninh). Trước kia tranh được bán ra chủ
+          yếu phục vụ cho dịp Tết Nguyên Đán, người dân nông thôn mua tranh về
+          dán trên tường, hết năm lại lột bỏ, dùng tranh mới. <br /><br />
+          Nghề làm tranh dân gian Đông Hồ là Di sản văn hóa phi vật thể cấp Quốc
+          gia. Được sự đồng ý của Thủ tướng Chính phủ, Bộ Văn hóa, Thể thao và
+          Du lịch đã phối hợp với Ủy ban Nhân dân tỉnh Bắc Ninh và các cơ quan
+          chuyên môn tiến hành nghiên cứu, lập hồ sơ khoa học cho Nghề làm tranh
+          dân gian Đông Hồ để đệ trình UNESCO đề nghị công nhận Di sản văn hóa
+          phi vật thể.
+        </div>
+        <div style="height: 4.8rem"></div>
+        <div class="hero__navigator">
+          <img src="assets/icons/icon-arrow-down.svg" alt="arrow-down" />
+          <div class="hero__navigator-text">Khám phá các tác phẩm</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 12.8rem"></div>
+
+    <!-- Danh sách tranh ở dạng carousel -->
+    <div class="gallery-wrapper">
+      <div class="content">
+        <div class="gallery full">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-1.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Vinh hoa phú quý</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-2.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Đàn gà mẹ con</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-3.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Đánh ghen</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-4.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Tứ lục bình</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-5.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Lễ trí - Nhân nghĩa</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-6.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Chăn trâu thổi sáo</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-7.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Hội làng</h1>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-8.jpg" alt="" />
+                </div>
+                <h1 class="gallery__image-title">Lợn đàn</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-next-button">
+            <div class="swiper-next-button__icon background--center"></div>
+          </div>
+          <div class="swiper-prev-button">
+            <div class="swiper-prev-button__icon background--center"></div>
+          </div>
+        </div>
+
+        <div style="height: 6.4rem"></div>
+
+        <div class="gallery thumb padding--default">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-1.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-2.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-3.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-4.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-5.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-6.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-7.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image">
+                  <img src="assets/images/collection-image-8.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-next-button background--center"></div>
+          <div class="swiper-prev-button background--center"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./lib/jquery.js"></script>
+  <script src="https://unpkg.com/swiper@6.0.2/swiper-bundle.min.js"></script>
+  <script src="js/category.js"></script>
+</html>
