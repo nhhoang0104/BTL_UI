@@ -22,6 +22,7 @@ body {
   height: 100%;
   font-size: 2rem;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -38,6 +39,28 @@ h2 {
   font-size: 3rem;
   font-weight: normal;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-white-blur);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #2222228f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 button {
   border: none;
@@ -88,6 +111,11 @@ button:hover::after {
 .size--default {
   width: 1.6rem;
   height: 1.6rem;
+}
+
+.size--medium {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .background--center {

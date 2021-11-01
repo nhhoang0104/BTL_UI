@@ -103,3 +103,12 @@ $(function () {
     );
   }
 });
+
+
+
+demo = wheelzoom(document.querySelectorAll('.popup__image img'));
+
+// demo = wheelzoom(document.querySelectorAll('img'),{
+//   zoom: 0.10,
+//   maxZoom: -1
+// });
