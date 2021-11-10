@@ -1,0 +1,21 @@
+{
+  "trealet": {
+    "exec": "streamline",
+    "title": "Triển lãm Tranh",
+    "listTrealet": [
+      {
+        "title": "Tranh Đông Hồ",
+        "description": "Tranh Đông Hồ, hay tên đầy đủ là tranh khắc gỗ dân gian Đông Hồ, là một dòng tranh dân gian Việt Nam với xuất xứ từ làng Đông Hồ (xã Song Hồ, huyện Thuận Thành, tỉnh Bắc Ninh). Trước kia tranh được bán ra chủ yếu phục vụ cho dịp Tết Nguyên Đán, người dân nông thôn mua tranh về dán trên tường, hết năm lại lột bỏ, dùng tranh mới.Tranh Đông Hồ, hay tên đầy đủ là tranh khắc gỗ dân gian Đông Hồ, là một dòng tranh dân gian Việt Nam với xuất xứ từ làng Đông Hồ (xã Song Hồ, huyện Thuận Thành, tỉnh Bắc Ninh). Trước kia tranh được bán ra chủ yếu phục vụ cho dịp Tết Nguyên Đán, người dân nông thôn mua tranh về dán trên tường, hết năm lại lột bỏ, dùng tranh mới. \nNghề làm tranh dân gian Đông Hồ là Di sản văn hóa phi vật thể cấp Quốc gia. Được sự đồng ý của Thủ tướng Chính phủ, Bộ Văn hóa, Thể thao và Du lịch đã phối hợp với Ủy ban Nhân dân tỉnh Bắc Ninh và các cơ quan chuyên môn tiến hành nghiên cứu, lập hồ sơ khoa học cho Nghề làm tranh dân gian Đông Hồ để đệ trình UNESCO đề nghị công nhận Di sản",
+        "items": ["8882", "8866", "8858", "8874", "8898", "8890", "8850"],
+        "avatar": "8898"
+      },
+      {
+        "exec": "streamline",
+        "title": "Tranh Sơn Dầu",
+        "description": "Tranh sơn dầu là quá trình vẽ bằng bột màu với môi trường dầu khô làm chất kết dính. Các loại dầu sấy thường được sử dụng bao gồm dầu hạt lanh, dầu hạt anh túc, dầu óc chó và dầu cây rum. Sự lựa chọn của dầu tạo ra một loạt các tính chất cho sơn dầu, chẳng hạn như lượng màu vàng hoặc thời gian khô. Một số khác biệt, tùy thuộc vào dầu, cũng có thể nhìn thấy trong ánh sáng của sơn. Một họa sĩ có thể sử dụng một số loại dầu khác nhau trong cùng một bức tranh tùy thuộc vào các sắc tố và hiệu ứng cụ thể mong muốn. Bản thân sơn cũng phát triển một sự nhất quán đặc biệt tùy thuộc vào phương tiện. Dầu có thể được đun sôi với một loại nhựa cây, chẳng hạn như nhựa thông hoặc nhũ hương, để tạo ra một lớp vecni được đánh giá cao vì chất lượng và độ bóng của nó.\nMặc dù sơn dầu lần đầu tiên đã được sử dụng cho các bức tranh Phật giáo bởi các họa sĩ ở miền tây Afghanistan vào khoảng giữa thế kỷ 5 và 10 nhưng nó đã không được phổ biến cho đến thế kỷ 15. Việc sử dụng sơn dầu có thể đã di chuyển về phía",
+        "items": ["8946", "8938", "8978", "8962", "8986", "8954", "8970"],
+        "avatar": "8978"
+      }
+    ]
+  }
+}

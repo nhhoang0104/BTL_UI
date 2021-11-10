@@ -53,7 +53,7 @@
       />
       <DxButton
         :width="120"
-        text="Thêm"
+        text="Lưu"
         type="success"
         styling-mode="outlined"
         @click="save"
@@ -75,6 +75,12 @@ export default {
   },
 
   props: {
+    dataSrc: {
+      type: Object,
+      default: null,
+    },
+    indexItem: { type: Number, default: -1 },
+
     isShowed: {
       type: Boolean,
       default: false,
@@ -84,10 +90,17 @@ export default {
   watch: {
     isShowed(newVal) {
       if (newVal) {
-        this.title = "";
-        this.description = "";
-        this.avatar = "";
-        this.images = "";
+        if (!this.dataSrc) {
+          this.title = "";
+          this.description = "";
+          this.avatar = "";
+          this.images = "";
+        } else {
+          this.title = this.dataSrc.title;
+          this.description = this.dataSrc.description;
+          this.avatar = this.dataSrc.avatar;
+          this.images = this.dataSrc.items.toString();
+        }
       }
     },
   },
@@ -123,7 +136,7 @@ export default {
         .split(",")
         .filter((item) => (item ? item : null));
 
-      this.$emit("save", { trealet: { exec: "slideshow", ...category } });
+      this.$emit("save", { exec: "slideshow", ...category }, this.indexItem);
     },
   },
 };

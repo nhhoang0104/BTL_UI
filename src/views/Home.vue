@@ -22,6 +22,33 @@
           @value-changed="readFileJson"
         />
       </div>
+      <div
+        class="list"
+        v-if="dataForm && dataForm.trealet && dataForm.trealet.items"
+      >
+        <div>Danh sách các loại tranh:</div>
+        <br />
+        <div v-for="(item, index) in dataForm.trealet.items" :key="index">
+          <div class="flex flex-v-center flex-gap-10">
+            <div>&nbsp;&nbsp;&nbsp; {{ index + 1 }}. {{ item.title }}:</div>
+            <DxButton
+              :width="100"
+              text="Sửa"
+              type="normal"
+              styling-mode="outlined"
+              @click="updateItem(index)"
+            />
+            <DxButton
+              :width="100"
+              text="Xóa"
+              type="normal"
+              styling-mode="outlined"
+              @click="removeItem(index)"
+            />
+          </div>
+          <br />
+        </div>
+      </div>
       <div class="tool">
         <div class="add">
           <div class="title">Thêm mới loại tranh:</div>
@@ -31,7 +58,7 @@
             text="Thêm"
             type="normal"
             styling-mode="outlined"
-            @click="openFormData"
+            @click="addItem"
           />
         </div>
 
@@ -47,6 +74,8 @@
 
     <FormData
       :isShowed="isShowForm"
+      :dataSrc="categorySelected"
+      :indexItem="indexCategorySelected"
       @close="closeFormData"
       @save="addNewCategory"
     />
@@ -77,11 +106,15 @@ export default {
       ],
       modelForm: {
         trealet: {
-          listTrealet: [],
+          exec: "streamline",
+          items: [],
         },
       },
       dataForm: null,
+      categorySelected: null,
+      indexCategorySelected: -1,
       mode: 0,
+      labelBtn: "Thêm",
     };
   },
 
@@ -105,15 +138,23 @@ export default {
     },
 
     // thêm category
-    addNewCategory(categgory = null) {
+    addNewCategory(category = null, index) {
       this.isShowForm = false;
-      if (categgory === null) return;
+      if (category === null) return;
 
-      if (!this.dataForm) this.dataForm.trealet.listTrealet.push(categgory);
+      if (this.dataForm) {
+        if (index === -1) {
+          this.dataForm.trealet.items.push(category);
+          return;
+        } else {
+          this.dataForm.trealet.items[index] = _.cloneDeep(category);
+        }
+      }
     },
 
     // xử lý đọc file
     readFileJson({ value }) {
+      let me = this;
       if (value && value[0]) {
         let file = value[0];
         let fr = new FileReader();
@@ -121,8 +162,7 @@ export default {
         fr.onload = function(e) {
           try {
             let temp = JSON.parse(e.target.result);
-            if (!temp && !temp.trealet)
-              this.dataForm = JSON.parse(e.target.result);
+            if (temp && temp.trealet) me.dataForm = JSON.parse(e.target.result);
           } catch (error) {
             this.dataForm = _.cloneDeep(this.modelForm);
             console.log(error);
@@ -136,11 +176,13 @@ export default {
     // xuất file
     exportFile() {
       let data = null;
+
       if (!this.dataForm) {
         data = JSON.stringify(this.modelForm);
       } else {
         data = JSON.stringify(this.dataForm);
       }
+
       const blob = new Blob([data], { type: "application/json" });
 
       const link = document.createElement("a");
@@ -148,6 +190,35 @@ export default {
       link.download = "dataSrc.trealet";
       link.click();
       URL.revokeObjectURL(link.href);
+    },
+
+    /**
+     * add
+     */
+    addItem() {
+      this.categorySelected = null;
+      this.indexCategorySelected = -1;
+      this.openFormData();
+    },
+
+    /**
+     * update item
+     * @params index
+     * @returns
+     */
+    updateItem(index) {
+      this.categorySelected = _.cloneDeep(this.dataForm.trealet.items[index]);
+      this.indexCategorySelected = index;
+      this.openFormData();
+    },
+
+    /**
+     * remove item
+     */
+    removeItem(index) {
+      if (index > -1) {
+        this.dataForm.trealet.items.splice(index, 1);
+      }
     },
   },
 };
@@ -191,5 +262,17 @@ export default {
       }
     }
   }
+}
+
+.flex {
+  display: flex !important;
+}
+
+.flex-v-center {
+  align-items: center;
+}
+
+.flex-gap-10 {
+  gap: 10px;
 }
 </style>
